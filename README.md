@@ -60,4 +60,26 @@ python3 src/emulator.py --vfs vfs.xml --script scripts/startup_commands.txt
 `scripts/test_files.*`, `scripts/test_deep.*` проверяют работу
 с каждым вариантом.
 
+## Этап 5: Дополнительные команды.
+
+Команды `mv` (переименовать/переместить файл или каталог)
+и `chown` (сменить владельца) меняют VFS только в памяти.
+
+## Тесты
+
+```text
+python3 -m unittest discover -s tests -v
+```
+
+## Запуск
+
+```text
+python3 src/emulator.py --vfs vfs.xml
+python3 src/emulator.py --vfs vfs.xml --script scripts/startup_commands.txt
+```
+
+Варианты VFS: `vfs-min.xml`, `vfs-files.xml`, `vfs-deep.xml`
+(несколько уровней каталогов). Скрипты `scripts/test_min.*`,
+`scripts/test_files.*`, `scripts/test_deep.*` проверяют работу
+с каждым вариантом.
 
